@@ -1,63 +1,57 @@
-# Facer
+# Animated average face
 
-Face detection, alignment, and averaging using OpenCV and `dlib`.
+The objective of this project is the generation of a two-dimensional 
+animated avatar based on the facial average of 122 samples. 
+Parts of these, 80 exactly, belong to a project on the average face 
+per country or ethnicity registered in a previous project. 
 
-Facer draws heavily on [this tutorial](https://www.learnopencv.com/average-face-opencv-c-python-tutorial/) from [Satya Mallick](https://github.com/spmallick). I had to update the code pretty heavily to get the project to work, so I thought I'd share my modifications.
+I consider the most reasonable way to give artificial intelligence a 
+face based on all ethnicity, country, age and gender. 
+Even though an AI has none of those traits it is itself a product of 
+all humanity.
 
-[![Average faces of rap, rock, and country music](AverageFaces_RapRockCountry.png)](https://www.reddit.com/r/dataisbeautiful/comments/crxrud/the_average_faces_of_rap_rock_and_country/)
+It also offers a more human interface and one that everyone can identify 
+with and empathize with without any sense of feeling underrepresented or 
+discriminated against.
 
-# Installation
-You have my 100% money-back guarantee that the most difficult part of using this package is installing its requirements. Once you've got OpenCV installed, the rest will be smooth sailing.
+You can also generate your own average face, just follow the instructions below.
 
-## OpenCV
-On Mac, use [`homebrew`](https://brew.sh) to install OpenCV. On Windows, I have no clue. Sorry.
+- Put front pictures of the faces in the folder /faces_for_average
+- python3 virtualenv venv\
+- pip install -r requirements.txt
+- python main.py
 
-```shell
-brew install opencv
-```
+# Testing
 
-Using `brew` to install OpenCV did actually work for me, but it also broke my previous Python installation and all my virtual environments. So uhh, good luck with that.
+    Python 3.10.6
+    Ubuntu 22.04
+    Laptop HP
+    Hardware:
+        RAM: 15 GiB
+        AMD Ryzen 7 4700U with Radeon Graphics × 8
+        RENOIR (renoir, LLVM 15.0.6, DRM 3.47, 5.19.0-43-generic)
 
-## Python packages
-After installing OpenCV, use `pip` to install `dlib`, `matplotlib`, and `numpy` from the `requirements.txt` file.
+# Folder project
 
-```
-pip install -r requirements.txt
-```
+├── average_face.jpg\
+├── dlib\
+├── facer\
+├── faces_for_average\
+├── main.py\
+├── README.md\
+├── requirements.txt\
+├── setup.py\
+└── tests
 
-### Pre-trained detection model
-The face landmark detection relies on a pre-trained model that must be downloaded separately from the `dlib` package itself.
 
-```shell
-wget http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2
-```
+# Just follow the instructions.
 
-Unzip the compressed file after it finishes downloading and move it into the `./Facer/dlib` directory.
+Simply copy the Colab in your Drive.
+Then enter in your Drive and open your Colab.
+Then apply the inside procedure step by step.
 
-# Usage
-```python
-from facer import facer
+[Colab Jupyter's notebook](https://colab.research.google.com/drive/13zRGNL3tmU0WA0THa0RNAqo1QY1PsGln#scrollTo=czsWABcK_2KE)
 
-# Load face images
-path_to_images = "./face_images"
-images = facer.load_images(path_to_images)
-
-# Detect landmarks for each face
-landmarks, faces = facer.detect_face_landmarks(images)
-
-# Use  the detected landmarks to create an average face
-average_face = facer.create_average_face(faces, landmarks, save_image=True)
-
-# View the composite image
-plt.imshow(average_face)
-plt.show()
-```
-
-Facer also supports creating animated GIFs of the averaging process:
-
-```python
-from facer import facer
-
-path_to_images = "./face_images"
-gif, average_face = facer.create_animated_gif(path_to_images)
-```
+Resources:
+- [johnwmillr](https://www.johnwmillr.com/average-faces-in-python/)
+- [This is What the Average Person Looks Like in Each Country](https://www.artfido.com/this-is-what-the-average-person-looks-like-in-each-country/)
