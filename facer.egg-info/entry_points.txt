@@ -1,0 +1,2 @@
+[console_scripts]
+facer = facer.__main__:main

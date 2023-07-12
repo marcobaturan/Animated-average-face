@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+facer/__init__.py
+facer/facer.py
+facer/utils.py
+facer.egg-info/PKG-INFO
+facer.egg-info/SOURCES.txt
+facer.egg-info/dependency_links.txt
+facer.egg-info/entry_points.txt
+facer.egg-info/requires.txt
+facer.egg-info/top_level.txt
+tests/test_facer.py
